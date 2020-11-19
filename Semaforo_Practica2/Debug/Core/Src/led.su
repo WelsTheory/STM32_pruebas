@@ -1,0 +1,2 @@
+led.c:10:6:OnLED	16	static
+led.c:26:6:OffLED	16	static

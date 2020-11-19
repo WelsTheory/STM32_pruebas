@@ -1,0 +1,4 @@
+mef.c:16:6:MEFSemaInit	4	static
+mef.c:20:6:MEFSemafActualizar	8	static
+mef.c:84:6:buttonPressed	8	static
+mef.c:88:6:buttonReleased	8	static

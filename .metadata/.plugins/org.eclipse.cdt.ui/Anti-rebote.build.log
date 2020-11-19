@@ -1,0 +1,10 @@
+20:19:03 **** Incremental Build of configuration Debug for project Anti-rebote ****
+make -j12 all 
+arm-none-eabi-size   Anti-rebote.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10200	     20	   1724	  11944	   2ea8	Anti-rebote.elf
+Finished building: default.size.stdout
+ 
+
+20:19:03 Build Finished. 0 errors, 0 warnings. (took 173ms)
+

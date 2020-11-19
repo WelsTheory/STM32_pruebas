@@ -1,0 +1,73 @@
+18:20:40 **** Incremental Build of configuration Debug for project Semaforo ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/sapi.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F401xE -DDEBUG -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/sapi.d" -MT"Core/Src/sapi.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sapi.o"
+../Core/Src/sapi.c:10:1: error: unknown type name 'UART_HandleTypeDef'; did you mean 'DMA_HandleTypeDef'?
+ UART_HandleTypeDef huart2;
+ ^~~~~~~~~~~~~~~~~~
+ DMA_HandleTypeDef
+../Core/Src/sapi.c: In function 'MX_USART2_UART_Init':
+../Core/Src/sapi.c:78:9: error: request for member 'Instance' in something not a structure or union
+   huart2.Instance = USART2;
+         ^
+../Core/Src/sapi.c:79:9: error: request for member 'Init' in something not a structure or union
+   huart2.Init.BaudRate = 115200;
+         ^
+../Core/Src/sapi.c:80:9: error: request for member 'Init' in something not a structure or union
+   huart2.Init.WordLength = UART_WORDLENGTH_8B;
+         ^
+../Core/Src/sapi.c:80:28: error: 'UART_WORDLENGTH_8B' undeclared (first use in this function)
+   huart2.Init.WordLength = UART_WORDLENGTH_8B;
+                            ^~~~~~~~~~~~~~~~~~
+../Core/Src/sapi.c:80:28: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/sapi.c:81:9: error: request for member 'Init' in something not a structure or union
+   huart2.Init.StopBits = UART_STOPBITS_1;
+         ^
+../Core/Src/sapi.c:81:26: error: 'UART_STOPBITS_1' undeclared (first use in this function); did you mean 'USART_GTPR_PSC_1'?
+   huart2.Init.StopBits = UART_STOPBITS_1;
+                          ^~~~~~~~~~~~~~~
+                          USART_GTPR_PSC_1
+../Core/Src/sapi.c:82:9: error: request for member 'Init' in something not a structure or union
+   huart2.Init.Parity = UART_PARITY_NONE;
+         ^
+../Core/Src/sapi.c:82:24: error: 'UART_PARITY_NONE' undeclared (first use in this function); did you mean 'FLASH_PROC_NONE'?
+   huart2.Init.Parity = UART_PARITY_NONE;
+                        ^~~~~~~~~~~~~~~~
+                        FLASH_PROC_NONE
+../Core/Src/sapi.c:83:9: error: request for member 'Init' in something not a structure or union
+   huart2.Init.Mode = UART_MODE_TX_RX;
+         ^
+../Core/Src/sapi.c:83:22: error: 'UART_MODE_TX_RX' undeclared (first use in this function)
+   huart2.Init.Mode = UART_MODE_TX_RX;
+                      ^~~~~~~~~~~~~~~
+../Core/Src/sapi.c:84:9: error: request for member 'Init' in something not a structure or union
+   huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+         ^
+../Core/Src/sapi.c:84:27: error: 'UART_HWCONTROL_NONE' undeclared (first use in this function); did you mean 'UART_PARITY_NONE'?
+   huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+                           ^~~~~~~~~~~~~~~~~~~
+                           UART_PARITY_NONE
+../Core/Src/sapi.c:85:9: error: request for member 'Init' in something not a structure or union
+   huart2.Init.OverSampling = UART_OVERSAMPLING_16;
+         ^
+../Core/Src/sapi.c:85:30: error: 'UART_OVERSAMPLING_16' undeclared (first use in this function); did you mean '__UART_BRR_SAMPLING16'?
+   huart2.Init.OverSampling = UART_OVERSAMPLING_16;
+                              ^~~~~~~~~~~~~~~~~~~~
+                              __UART_BRR_SAMPLING16
+../Core/Src/sapi.c:86:7: warning: implicit declaration of function 'HAL_UART_Init'; did you mean 'HAL_DMA_Init'? [-Wimplicit-function-declaration]
+   if (HAL_UART_Init(&huart2) != HAL_OK)
+       ^~~~~~~~~~~~~
+       HAL_DMA_Init
+../Core/Src/sapi.c: In function 'MX_GPIO_Init':
+../Core/Src/sapi.c:115:21: error: 'LED0_GPIO_Port' undeclared (first use in this function); did you mean 'LED4_GPIO_Port'?
+   HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, GPIO_PIN_RESET);
+                     ^~~~~~~~~~~~~~
+                     LED4_GPIO_Port
+../Core/Src/sapi.c:115:37: error: 'LED0_Pin' undeclared (first use in this function); did you mean 'LED3_Pin'?
+   HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, GPIO_PIN_RESET);
+                                     ^~~~~~~~
+                                     LED3_Pin
+make: *** [Core/Src/subdir.mk:44: Core/Src/sapi.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+
+18:20:41 Build Failed. 18 errors, 1 warnings. (took 276ms)
+

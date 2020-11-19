@@ -1,0 +1,5 @@
+semaforo.c:13:6:Normal	8	static
+semaforo.c:26:6:Desconectado	8	static
+semaforo.c:34:6:Alarma	8	static
+semaforo.c:43:6:leerTeclas	8	static
+semaforo.c:55:6:Estado	8	static

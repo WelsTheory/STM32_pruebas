@@ -1,0 +1,15 @@
+#include "main.h"
+#include "sapi.h"
+#include "led.h"
+#include "semaforo.h"
+#include "mef.h"
+
+int main(void)
+{
+	boardInit();
+	while (1)
+	{
+		Alarma();
+	}
+
+}

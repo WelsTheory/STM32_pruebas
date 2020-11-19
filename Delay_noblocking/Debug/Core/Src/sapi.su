@@ -1,0 +1,9 @@
+sapi.c:15:6:boardInit	8	static
+sapi.c:24:10:tickRead	4	static
+sapi.c:28:6:tickWrite	16	static
+sapi.c:33:6:SystemClock_Config	88	static
+sapi.c:78:6:MX_TIM11_Init	8	static
+sapi.c:101:6:MX_USART2_UART_Init	8	static
+sapi.c:134:6:MX_GPIO_Init	48	static
+sapi.c:173:6:HAL_TIM_PeriodElapsedCallback	16	static
+sapi.c:185:6:Error_Handler	4	static

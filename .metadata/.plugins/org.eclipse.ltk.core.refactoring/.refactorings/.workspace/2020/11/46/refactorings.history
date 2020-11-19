@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;Semaforo_delay&apos;" deleteContents="true" description="Delete resource &apos;Semaforo_delay&apos;" element1="/Semaforo_delay" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1605149313706"/>
+</session>

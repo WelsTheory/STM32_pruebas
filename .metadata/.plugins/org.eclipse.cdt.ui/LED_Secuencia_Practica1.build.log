@@ -1,0 +1,10 @@
+17:42:46 **** Incremental Build of configuration Debug for project LED_Secuencia_Practica1 ****
+make -j12 all 
+arm-none-eabi-size   LED_Secuencia_Practica1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8724	     24	   1640	  10388	   2894	LED_Secuencia_Practica1.elf
+Finished building: default.size.stdout
+ 
+
+17:42:46 Build Finished. 0 errors, 0 warnings. (took 173ms)
+

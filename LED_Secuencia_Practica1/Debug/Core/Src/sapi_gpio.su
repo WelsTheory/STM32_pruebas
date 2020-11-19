@@ -1,0 +1,4 @@
+sapi_gpio.c:16:8:encenderLED	16	static
+sapi_gpio.c:37:6:apagarLeds	8	static
+sapi_gpio.c:47:6:leerTeclas	8	static
+sapi_gpio.c:67:6:activarSecuencia	8	static

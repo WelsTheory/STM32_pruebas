@@ -1,0 +1,5 @@
+sapi.c:12:6:boardInit	8	static
+sapi.c:23:6:SystemClock_Config	88	static
+sapi.c:68:6:MX_USART2_UART_Init	8	static
+sapi.c:101:6:MX_GPIO_Init	48	static
+sapi.c:158:6:Error_Handler	4	static

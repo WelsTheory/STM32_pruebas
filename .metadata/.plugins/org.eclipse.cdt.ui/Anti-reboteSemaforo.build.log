@@ -1,0 +1,10 @@
+22:30:01 **** Incremental Build of configuration Debug for project Anti-reboteSemaforo ****
+make -j12 all 
+arm-none-eabi-size   Anti-reboteSemaforo.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10248	     20	   1724	  11992	   2ed8	Anti-reboteSemaforo.elf
+Finished building: default.size.stdout
+ 
+
+22:30:01 Build Finished. 0 errors, 0 warnings. (took 122ms)
+

@@ -1,0 +1,24 @@
+22:29:58 **** Incremental Build of configuration Debug for project Anti-reboteSemaforo ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/mef.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F401xE -DDEBUG -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/mef.d" -MT"Core/Src/mef.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/mef.o"
+arm-none-eabi-gcc -o "Anti-reboteSemaforo.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/wels/Documents/STM32/Anti-reboteSemaforo/STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Anti-reboteSemaforo.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Anti-reboteSemaforo.elf
+ 
+arm-none-eabi-objdump -h -S  Anti-reboteSemaforo.elf  > "Anti-reboteSemaforo.list"
+arm-none-eabi-objcopy  -O binary  Anti-reboteSemaforo.elf  "Anti-reboteSemaforo.bin"
+arm-none-eabi-size   Anti-reboteSemaforo.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10248	     20	   1724	  11992	   2ed8	Anti-reboteSemaforo.elf
+Finished building: default.size.stdout
+ 
+Finished building: Anti-reboteSemaforo.bin
+ 
+Finished building: Anti-reboteSemaforo.list
+ 
+22:30:01 **** Incremental Build of configuration Debug for project Anti-reboteSemaforo ****
+make -j12 all 
+arm-none-eabi-size   Anti-reboteSemaforo.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10248	     20	   1724	  11992	   2ed8	Anti-reboteSemaforo.elf
+Finished building: default.size.stdout
+ 
