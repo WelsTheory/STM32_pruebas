@@ -4,7 +4,6 @@
  *  Created on: Nov 18, 2020
  *      Author: wels
  */
-//Prueba commit
 
 #include "main.h"
 #include "sapi.h"
