@@ -1,0 +1,25 @@
+#include "main.h"
+#include "sapi.h"
+
+delay_t MEFSema;
+bool_t cuenta = 0;
+uint8_t datos[14] = "suscribirte :D";
+
+int main(void)
+{
+	boardInit();
+	delay_ms(&MEFSema,500);
+	while (1)
+	{
+		if(delayRead(&MEFSema)){
+			if(cuenta >= 4){
+				Tx_Data(datos);
+				cuenta = 0;
+			}
+			else{
+				cuenta++;
+			}
+		}
+	}
+
+}

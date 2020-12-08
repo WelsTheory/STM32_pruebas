@@ -1,0 +1,13 @@
+/*
+ * App_uart.h
+ *
+ *  Created on: Dec 3, 2020
+ *      Author: wels
+ */
+
+#ifndef INC_APP_UART_H_
+#define INC_APP_UART_H_
+
+
+
+#endif /* INC_APP_UART_H_ */

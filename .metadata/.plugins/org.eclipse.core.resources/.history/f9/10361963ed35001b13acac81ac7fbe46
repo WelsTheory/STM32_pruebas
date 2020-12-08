@@ -1,0 +1,78 @@
+/*
+ * App_mef.c
+ *
+ *  Created on: Dec 3, 2020
+ *      Author: wels
+ */
+
+
+#include "main.h"
+#include "sapi.h"
+#include "App_mef.h"
+#include "led.h"
+#include "App_uart.h"
+
+extern delay_t MEFSema;
+delay_t MEFSemaVerde;
+bool_t cuenta = 0;
+uint8_t dato1[15] = "MODO NORMAL\n\r";
+uint8_t dato2[14] = "MODO LENTO\n\r";
+uint8_t dato3[15] = "MODO RAPIDO\n\r";
+
+//ESTDO_NORMAL, ESTADO_LENTO, ESTADO_RAPIDO
+void MEFEstadoInit(void){
+	estadoActual = ESTADO_NORMAL;
+	delay_ms(&MEFSemaVerde,500);
+}
+
+void MEFEstadoActualizar(void){
+	switch(estadoActual){
+		case ESTADO_NORMAL:
+			OnLED(ROJO);
+			OffLED(VERDE);
+			if(delayRead(&MEFSema)){
+				if(cuenta >= 2){
+					UART_String(dato2);
+
+					estadoActual = ESTADO_LENTO;
+					cuenta = 0;
+				}
+				else{
+					cuenta++;
+				}
+			}
+		break;
+		case ESTADO_LENTO:
+			OnLED(AMARILLO);
+			OffLED(ROJO);
+			if(delayRead(&MEFSema)){
+				if(cuenta >= 4){
+					UART_String(dato3);
+					estadoActual = ESTADO_RAPIDO;
+					cuenta = 0;
+				}
+				else{
+					cuenta++;
+				}
+			}
+		break;
+		case ESTADO_RAPIDO:
+			OnLED(VERDE);
+			OffLED(AMARILLO);
+			if(delayRead(&MEFSemaVerde)){
+				if(cuenta >= 1){
+					UART_String(dato1);
+					OffLED(VERDE);
+					estadoActual = ESTADO_NORMAL;
+					cuenta = 0;
+				}
+				else{
+					cuenta++;
+				}
+			}
+		break;
+		default:
+			MEFEstadoInit();
+		break;
+	}
+}

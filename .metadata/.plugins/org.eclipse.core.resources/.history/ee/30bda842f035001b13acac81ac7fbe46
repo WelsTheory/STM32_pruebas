@@ -1,0 +1,32 @@
+#include "main.h"
+#include "sapi.h"
+#include "App_uart.h"
+
+delay_t MEFSema;
+delay_t MEFBoton;
+
+int main(void)
+{
+	boardInit();
+	delay_ms(&MEFSema,500);
+	delay_ms(&MEFBoton,40);
+	MEFEstadoInit();
+	while (1)
+	{
+		MEFEstadoActualizar();
+		/*if(delayRead(&MEFSema)){
+			if(cuenta >= 4){
+				UART_String(datos);
+				cuenta = 0;
+			}
+			if(cuenta >= 2){
+				UART_Write();
+				cuenta++;
+			}
+			else{
+				cuenta++;
+			}
+		}*/
+	}
+
+}

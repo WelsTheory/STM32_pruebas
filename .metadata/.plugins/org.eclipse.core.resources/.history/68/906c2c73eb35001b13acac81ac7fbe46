@@ -1,0 +1,81 @@
+/*
+ * App_mef.c
+ *
+ *  Created on: Dec 3, 2020
+ *      Author: wels
+ */
+
+
+#include "main.h"
+#include "sapi.h"
+#include "App_mef.h"
+#include "led.h"
+
+extern delay_t MEFSema;
+delay_t MEFSemaVerde;
+bool_t cuenta = 0;
+uint8_t datos[14] = "suscribirt\n\r";
+
+//ESTDO_NORMAL, ESTADO_LENTO, ESTADO_RAPIDO
+void MEFEstadoInit(void){
+	estadoActual = ESTDO_NORMAL;
+	delay_ms(&MEFSemaVerde,100);
+}
+
+void MEFSemafActualizar(void){
+	switch(estadoActual){
+		case ESTADO_NORMAL:
+			//OnLED(ROJO);
+			//OffLED(AMARILLO);
+			//OffLED(VERDE);
+			if(delayRead(&MEFSema)){
+				if(cuenta >= 5){
+					UART_String(datos);
+					estadoActual = ESTADO_LENTO;
+					cuenta = 0;
+				}
+				else{
+					cuenta++;
+				}
+			}
+		break;
+		case ESTADO_LENTO:
+			//OnLED(ROJO);
+			//OnLED(AMARILLO);
+			//OffLED(VERDE);
+			if(delayRead(&MEFSema)){
+				if(cuenta >= 20){
+					UART_String(datos);
+					estadoActual = ESTADO_RAPIDO;
+					cuenta = 0;
+				}
+				else{
+					cuenta++;
+				}
+			}
+		break;
+		case ESTADO_RAPIDO:
+			if(delayRead(&MEFSemaVerde)){
+				if(cuenta >= 6){
+					UART_String(datos);
+					estadoActual = AMARILLO_;
+					cuenta = 0;
+				}
+				else{
+					cuenta++;
+				}
+			}
+		break;
+		default:
+			MEFEstadoInit();
+		break;
+	}
+}
+
+void buttonPressed(void){
+	OnLED(VERDE);
+}
+
+void buttonReleased(void){
+	OffLED(VERDE);
+}

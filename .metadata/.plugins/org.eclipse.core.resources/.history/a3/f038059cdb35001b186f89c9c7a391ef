@@ -1,0 +1,29 @@
+#include "main.h"
+#include "sapi.h"
+//#include "led.h"
+//#include "semaforo.h"
+//#include "mef.h"
+
+//delay_t MEFSema;
+//delay_t SemaforoTiempo;
+
+tick_t tickCounter = 0;
+
+
+int main(void)
+{
+	boardInit();
+	//MEFSemaInit();
+	//delay_ms(&MEFSema,500);
+	while (1)
+	{
+		if(tickCounter == 100){
+			Tx_Data();
+			tickCounter = 0;
+		}
+		//MEFSemafActualizar();
+		//Desconectado();
+		//MEFButtonActualizar();
+	}
+
+}

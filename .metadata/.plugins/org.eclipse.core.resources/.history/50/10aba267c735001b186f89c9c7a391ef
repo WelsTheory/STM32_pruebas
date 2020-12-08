@@ -1,0 +1,27 @@
+#include "main.h"
+#include "sapi.h"
+#include "led.h"
+#include "semaforo.h"
+#include "mef.h"
+
+delay_t MEFSema;
+delay_t SemaforoTiempo;
+
+uint8_t dataT[14] = "Haru baña\n\r";
+uint8_t dataR[1] = "";
+
+int main(void)
+{
+	boardInit();
+	MEFSemaInit();
+	delay_ms(&MEFSema,500);
+	while (1)
+	{
+		Tx_Data(dataT);
+		delayRead(&MEFSema);
+		//MEFSemafActualizar();
+		//Desconectado();
+		//MEFButtonActualizar();
+	}
+
+}

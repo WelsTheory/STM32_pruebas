@@ -1,0 +1,17 @@
+/*
+ * App_uart.c
+ *
+ *  Created on: Dec 3, 2020
+ *      Author: wels
+ */
+#include "App_uart.h"
+#include "main.h"
+
+void Tx_Data(uint8_t *Data){
+	HAL_UART_Transmit(&huart2, Data, 14, HAL_MAX_DELAY);
+}
+
+void Tx_dato(void){
+	uint8_t otro= 0x30;
+	HAL_UART_Transmit_IT(&huart2, otro, 1);
+}

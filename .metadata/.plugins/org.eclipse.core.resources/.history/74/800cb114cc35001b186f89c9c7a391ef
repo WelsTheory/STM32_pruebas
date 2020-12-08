@@ -1,0 +1,29 @@
+#include "main.h"
+#include "sapi.h"
+#include "led.h"
+#include "semaforo.h"
+#include "mef.h"
+
+delay_t MEFSema;
+delay_t SemaforoTiempo;
+
+uint8_t dataT[14] = "holaundo\n\r";
+uint8_t dataR[1] = "";
+
+int main(void)
+{
+	boardInit();
+	MEFSemaInit();
+	delay_ms(&MEFSema,1000);
+	while (1)
+	{
+		//Tx_Data(dataT,14);
+		HAL_UART_Transmit(&huart2,dataT,14,1000);
+		HAL_Delay(1000);
+		//delayRead(&MEFSema);
+		//MEFSemafActualizar();
+		//Desconectado();
+		//MEFButtonActualizar();
+	}
+
+}

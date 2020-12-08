@@ -1,0 +1,154 @@
+18:06:47 **** Incremental Build of configuration Debug for project sEOS_1 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F401xE -DDEBUG -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/seos_pont_2014_isr.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F401xE -DDEBUG -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/seos_pont_2014_isr.d" -MT"Core/Src/seos_pont_2014_isr.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/seos_pont_2014_isr.o"
+arm-none-eabi-gcc "../Core/Src/seos_pont_2014_scheduler.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F401xE -DDEBUG -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/seos_pont_2014_scheduler.d" -MT"Core/Src/seos_pont_2014_scheduler.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/seos_pont_2014_scheduler.o"
+In file included from ../Core/Src/seos_pont_2014_isr.c:45:0:
+../Core/Inc/seos_pont_2014_isr.h:16:1: warning: parameter names (without types) in function declaration
+ void schedulerStart( tick_t );
+ ^~~~
+In file included from ../Core/Src/seos_pont_2014_isr.c:46:0:
+../Core/Inc/seos_pont_2014_scheduler.h:15:4: error: unknown type name 'callBackFuncPtr_t'
+    callBackFuncPtr_t pTask;  // void (* pTask)(void);
+    ^~~~~~~~~~~~~~~~~
+../Core/Inc/seos_pont_2014_scheduler.h:21:4: error: unknown type name 'int32_t'
+    int32_t delay;
+    ^~~~~~~
+../Core/Inc/seos_pont_2014_scheduler.h:24:4: error: unknown type name 'int32_t'
+    int32_t period;
+    ^~~~~~~
+../Core/Inc/seos_pont_2014_scheduler.h:26:4: error: unknown type name 'int32_t'
+    int32_t runMe;
+    ^~~~~~~
+../Core/Inc/seos_pont_2014_scheduler.h:37:1: error: unknown type name 'int32_t'
+ int32_t schedulerAddTask( callBackFuncPtr_t pFunction, //void (* pFunction)(void),
+ ^~~~~~~
+../Core/Inc/seos_pont_2014_scheduler.h:37:27: error: unknown type name 'callBackFuncPtr_t'
+ int32_t schedulerAddTask( callBackFuncPtr_t pFunction, //void (* pFunction)(void),
+                           ^~~~~~~~~~~~~~~~~
+../Core/Inc/seos_pont_2014_scheduler.h:39:33: error: unknown type name 'int32_t'
+                           const int32_t DELAY,
+                                 ^~~~~~~
+../Core/Inc/seos_pont_2014_scheduler.h:40:33: error: unknown type name 'int32_t'
+                           const int32_t PERIOD
+                                 ^~~~~~~
+../Core/Inc/seos_pont_2014_scheduler.h:44:1: error: unknown type name 'int8_t'; did you mean 'int'?
+ int8_t schedulerDeleteTask( int32_t taskIndex );
+ ^~~~~~
+ int
+../Core/Inc/seos_pont_2014_scheduler.h:44:29: error: unknown type name 'int32_t'
+ int8_t schedulerDeleteTask( int32_t taskIndex );
+                             ^~~~~~~
+In file included from ../Core/Src/seos_pont_2014_scheduler.c:39:0:
+../Core/Inc/seos_pont_2014_scheduler.h:15:4: error: unknown type name 'callBackFuncPtr_t'
+    callBackFuncPtr_t pTask;  // void (* pTask)(void);
+    ^~~~~~~~~~~~~~~~~
+../Core/Inc/seos_pont_2014_scheduler.h:21:4: error: unknown type name 'int32_t'
+    int32_t delay;
+    ^~~~~~~
+../Core/Inc/seos_pont_2014_scheduler.h:24:4: error: unknown type name 'int32_t'
+    int32_t period;
+    ^~~~~~~
+../Core/Inc/seos_pont_2014_scheduler.h:26:4: error: unknown type name 'int32_t'
+    int32_t runMe;
+    ^~~~~~~
+../Core/Inc/seos_pont_2014_scheduler.h:37:1: error: unknown type name 'int32_t'
+ int32_t schedulerAddTask( callBackFuncPtr_t pFunction, //void (* pFunction)(void),
+ ^~~~~~~
+../Core/Inc/seos_pont_2014_scheduler.h:37:27: error: unknown type name 'callBackFuncPtr_t'
+ int32_t schedulerAddTask( callBackFuncPtr_t pFunction, //void (* pFunction)(void),
+                           ^~~~~~~~~~~~~~~~~
+../Core/Inc/seos_pont_2014_scheduler.h:39:33: error: unknown type name 'int32_t'
+                           const int32_t DELAY,
+                                 ^~~~~~~
+../Core/Inc/seos_pont_2014_scheduler.h:40:33: error: unknown type name 'int32_t'
+                           const int32_t PERIOD
+                                 ^~~~~~~
+../Core/Inc/seos_pont_2014_scheduler.h:44:1: error: unknown type name 'int8_t'; did you mean 'int'?
+ int8_t schedulerDeleteTask( int32_t taskIndex );
+ ^~~~~~
+ int
+../Core/Inc/seos_pont_2014_scheduler.h:44:29: error: unknown type name 'int32_t'
+ int8_t schedulerDeleteTask( int32_t taskIndex );
+                             ^~~~~~~
+../Core/Src/seos_pont_2014_scheduler.c:61:24: error: 'SCHEDULER_MAX_TASKS' undeclared here (not in a function)
+ sTask_t schedulerTasks[SCHEDULER_MAX_TASKS];
+                        ^~~~~~~~~~~~~~~~~~~
+../Core/Src/seos_pont_2014_scheduler.c: In function 'schedulerDispatchTasks':
+../Core/Src/seos_pont_2014_scheduler.c:79:4: error: unknown type name 'int32_t'
+    int32_t index;
+    ^~~~~~~
+../Core/Src/seos_pont_2014_scheduler.c:91:13: warning: implicit declaration of function 'schedulerDeleteTask'; did you mean 'schedulerDispatchTasks'? [-Wimplicit-function-declaration]
+             schedulerDeleteTask(index);
+             ^~~~~~~~~~~~~~~~~~~
+             schedulerDispatchTasks
+../Core/Src/seos_pont_2014_scheduler.c: At top level:
+../Core/Src/seos_pont_2014_scheduler.c:139:1: error: unknown type name 'int32_t'
+ int32_t schedulerAddTask( callBackFuncPtr_t pFunction, //void (* pFunction)(void),
+ ^~~~~~~
+../Core/Src/seos_pont_2014_scheduler.c:139:27: error: unknown type name 'callBackFuncPtr_t'
+ int32_t schedulerAddTask( callBackFuncPtr_t pFunction, //void (* pFunction)(void),
+                           ^~~~~~~~~~~~~~~~~
+../Core/Src/seos_pont_2014_scheduler.c:141:33: error: unknown type name 'int32_t'
+                           const int32_t DELAY,
+                                 ^~~~~~~
+../Core/Src/seos_pont_2014_scheduler.c:142:33: error: unknown type name 'int32_t'
+                           const int32_t PERIOD
+                                 ^~~~~~~
+../Core/Src/seos_pont_2014_scheduler.c:181:1: error: unknown type name 'int8_t'; did you mean 'int'?
+ int8_t schedulerDeleteTask( int32_t taskIndex ){
+ ^~~~~~
+ int
+../Core/Src/seos_pont_2014_scheduler.c:181:29: error: unknown type name 'int32_t'
+ int8_t schedulerDeleteTask( int32_t taskIndex ){
+                             ^~~~~~~
+../Core/Src/seos_pont_2014_scheduler.c: In function 'schedulerGoToSleep':
+../Core/Src/seos_pont_2014_scheduler.c:255:4: warning: implicit declaration of function 'sleepUntilNextInterrupt' [-Wimplicit-function-declaration]
+    sleepUntilNextInterrupt();
+    ^~~~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:66: Core/Src/seos_pont_2014_scheduler.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:15:2: warning: implicit declaration of function 'schedulerInit' [-Wimplicit-function-declaration]
+  schedulerInit();
+  ^~~~~~~~~~~~~
+../Core/Src/seos_pont_2014_isr.c:62:31: error: 'SCHEDULER_MAX_TASKS' undeclared here (not in a function)
+ extern sTask_t schedulerTasks[SCHEDULER_MAX_TASKS];
+                               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:18:2: warning: implicit declaration of function 'schedulerAddTask' [-Wimplicit-function-declaration]
+  schedulerAddTask( task1_Update, // funcion de tarea a agregar
+  ^~~~~~~~~~~~~~~~
+../Core/Src/seos_pont_2014_isr.c: In function 'schedulerInit':
+../Core/Src/seos_pont_2014_isr.c:81:7: warning: implicit declaration of function 'schedulerDeleteTask'; did you mean 'schedulerDispatchTasks'? [-Wimplicit-function-declaration]
+       schedulerDeleteTask(i);
+       ^~~~~~~~~~~~~~~~~~~
+       schedulerDispatchTasks
+../Core/Src/seos_pont_2014_isr.c:89:8: warning: implicit declaration of function 'tickInit'; did you mean 'tickWrite'? [-Wimplicit-function-declaration]
+    if( tickInit( 1 ) ){
+        ^~~~~~~~
+        tickWrite
+../Core/Src/seos_pont_2014_isr.c: At top level:
+../Core/Src/seos_pont_2014_isr.c:133:6: error: conflicting types for 'schedulerStart'
+ void schedulerStart( tick_t tickRateMs ){
+      ^~~~~~~~~~~~~~
+../Core/Src/seos_pont_2014_isr.c:133:1: note: an argument type that has a default promotion can't match an empty parameter name list declaration
+ void schedulerStart( tick_t tickRateMs ){
+ ^~~~
+In file included from ../Core/Src/seos_pont_2014_isr.c:45:0:
+../Core/Inc/seos_pont_2014_isr.h:16:6: note: previous declaration of 'schedulerStart' was here
+ void schedulerStart( tick_t );
+      ^~~~~~~~~~~~~~
+../Core/Src/main.c:18:20: error: 'task1_Update' undeclared (first use in this function)
+  schedulerAddTask( task1_Update, // funcion de tarea a agregar
+                    ^~~~~~~~~~~~
+../Core/Src/main.c:18:20: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:56: Core/Src/main.o] Error 1
+../Core/Src/seos_pont_2014_isr.c: In function 'schedulerStart':
+../Core/Src/seos_pont_2014_isr.c:147:7: warning: implicit declaration of function 'tickCallbackSet' [-Wimplicit-function-declaration]
+       tickCallbackSet( schedulerUpdate, NULL );
+       ^~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:64: Core/Src/seos_pont_2014_isr.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+
+18:06:47 Build Failed. 35 errors, 8 warnings. (took 269ms)
+

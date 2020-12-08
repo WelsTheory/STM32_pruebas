@@ -1,0 +1,14 @@
+sapi.c:25:6:Tx_Data	0	static
+sapi.c:30:6:delay_ms	0	static
+sapi.c:35:8:delayRead	0	static
+sapi.c:51:6:delayWrite	0	static
+sapi.c:56:10:tickRead	0	static
+sapi.c:62:6:tickWrite	0	static
+sapi.c:66:6:delay	0	static
+sapi.c:74:6:SystemClock_Config	96	static
+sapi.c:119:6:MX_TIM11_Init	0	static
+sapi.c:150:6:MX_USART2_UART_Init	0	static
+sapi.c:183:6:MX_GPIO_Init	64	static
+sapi.c:16:6:boardInit	8	static
+sapi.c:228:6:HAL_TIM_PeriodElapsedCallback	0	static
+sapi.c:240:6:Error_Handler	0	static

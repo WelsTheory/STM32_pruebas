@@ -1,0 +1,2 @@
+App_uart.c:16:6:UART_String	16	static
+App_uart.c:20:6:UART_Write	16	static
